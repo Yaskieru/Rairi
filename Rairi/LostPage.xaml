@@ -1,9 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Rairi.LostPage">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Upload" Clicked="UploadButton_Clicked"/>
+        <!--<ToolbarItem Text="Upload" Clicked="UploadButton_Clicked"/>-->
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <Label Text="Lost Page" />
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.1*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="0.1*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                    <Button Text="Upload Picture 1" Clicked="UploadButton_Clicked"/>
+                    <Button Text="Upload Picture 2" Clicked="UploadButton2_Clicked"/>
+                </StackLayout>
+            </Grid>
+            <Grid Grid.Row="1">
+                <Image x:Name="selectedImage"/>
+            </Grid>
+            <Grid Grid.Row="2">
+                <Image x:Name="selectedImage2"/>
+            </Grid>
+            <Grid Grid.Row="3">
+                <Button Text="Analyze" Clicked="Handle_Clicked"/>
+            </Grid>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
